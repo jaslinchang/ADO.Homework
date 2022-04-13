@@ -90,14 +90,11 @@ namespace ADO.Homework
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            this.listBox1.Items.Clear();
-
-            
+        {            
             //1.0
             SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=Northwind;Integrated Security=True");
             
-            SqlDataAdapter adapter = new SqlDataAdapter($" SELECT ProductName FROM Categories c join Products p on c.CategoryID = p.CategoryID where c.CategoryName = '{comboBox1.Text}'", conn);
+            SqlDataAdapter adapter = new SqlDataAdapter($" SELECT ProductName FROM Categories c join Products p on c.CategoryID = p.CategoryID where c.CategoryName = '{comboBox2.Text}'", conn);
            
             DataSet ds = new DataSet();
 
