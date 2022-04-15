@@ -37,11 +37,11 @@ namespace ADO.Homework
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.categoriesTableAdapter1 = new ADO.Homework.NWDataSetTableAdapters.CategoriesTableAdapter();
             this.productsTableAdapter1 = new ADO.Homework.NWDataSetTableAdapters.ProductsTableAdapter();
             this.nwDataSet1 = new ADO.Homework.NWDataSet();
@@ -149,6 +149,15 @@ namespace ADO.Homework
             this.tabPage2.Text = "Disconnect";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(46, 143);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(637, 249);
+            this.dataGridView1.TabIndex = 20;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -192,15 +201,6 @@ namespace ADO.Homework
             this.label6.Size = new System.Drawing.Size(130, 22);
             this.label6.TabIndex = 17;
             this.label6.Text = "Disconnected";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(156, 118);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(450, 249);
-            this.dataGridView1.TabIndex = 20;
             // 
             // categoriesTableAdapter1
             // 

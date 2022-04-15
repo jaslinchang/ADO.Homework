@@ -15,13 +15,12 @@ namespace ADO.Homework
     {
         public FrmCategoryProducts()
         {
-            InitializeComponent();
-        }
-
-        SqlConnection conn = null;
+            InitializeComponent();          
+        }       
 
         private void FrmCategoryProducts_Load(object sender, EventArgs e)
         {
+            //Connect
             try
             {
                 //step1  準備連線
@@ -37,8 +36,8 @@ namespace ADO.Homework
                 while (dataReader.Read())
                 {
                    string  name = $"{dataReader["CategoryName"]}";
-                    comboBox1.Items.Add(name);
-                    comboBox2.Items.Add(name);
+                    this.comboBox1.Items.Add(name);
+                    this.comboBox2.Items.Add(name);
                 }
             }
             catch (Exception ex)  //保護程式，抓一些無法掌控的錯誤
@@ -52,8 +51,24 @@ namespace ADO.Homework
                     conn.Close();  //斷開連接
                 }
             }
- 
+            //Disconnect
+            //this.categoriesTableAdapter1.Fill(this.nwDataSet1.Categories);
+
+            //for(int i = 0; i < this.nwDataSet1.Tables.Count; i++)
+            //{
+            //    DataTable table =this.nwDataSet1.Tables[i];
+            //    string s = "";
+            //    for(int column = 0; column < table.Columns.Count; column++)
+            //    {
+            //        s = table.Columns[column].ColumnName;
+            //        this.comboBox2.Items.Add(s);
+
+            //    }
+            //}
         }
+
+        //Connect
+        SqlConnection conn = null;
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {          
             try
@@ -89,6 +104,9 @@ namespace ADO.Homework
             }
         }
 
+        //===============================================
+        //DisConnect
+
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {            
             //1.0
@@ -99,17 +117,16 @@ namespace ADO.Homework
             DataSet ds = new DataSet();
 
             adapter.Fill(ds);
-
+           
             this.dataGridView1.DataSource = ds.Tables[0];
-            
-            
+
+
             /*//2.0
          
             //string aa =comboBox2.Text;
             this.categoriesTableAdapter1.FillByCategoryName(this.nwDataSet1.Categories, comboBox2.Text);
             this.dataGridView1.DataSource = this.nwDataSet1.Categories;
             */
-
 
         }
     }
