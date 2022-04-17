@@ -47,11 +47,14 @@ namespace ADO.Homework
             this.無ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ImageList1 = new System.Windows.Forms.ImageList(this.components);
             this.ImageList2 = new System.Windows.Forms.ImageList(this.components);
+            this.customersTableAdapter1 = new ADO.Homework.NWDataSetTableAdapters.CustomersTableAdapter();
+            this.nwDataSet1 = new ADO.Homework.NWDataSet();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nwDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -153,14 +156,14 @@ namespace ADO.Homework
             // customerIDAscToolStripMenuItem
             // 
             this.customerIDAscToolStripMenuItem.Name = "customerIDAscToolStripMenuItem";
-            this.customerIDAscToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.customerIDAscToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.customerIDAscToolStripMenuItem.Text = "CustomerID Asc";
             this.customerIDAscToolStripMenuItem.Click += new System.EventHandler(this.customerIDAscToolStripMenuItem_Click);
             // 
             // customersIDDescToolStripMenuItem
             // 
             this.customersIDDescToolStripMenuItem.Name = "customersIDDescToolStripMenuItem";
-            this.customersIDDescToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.customersIDDescToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.customersIDDescToolStripMenuItem.Text = "CustomersID Desc";
             this.customersIDDescToolStripMenuItem.Click += new System.EventHandler(this.customersIDDescToolStripMenuItem_Click);
             // 
@@ -176,13 +179,13 @@ namespace ADO.Homework
             // countryToolStripMenuItem
             // 
             this.countryToolStripMenuItem.Name = "countryToolStripMenuItem";
-            this.countryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.countryToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.countryToolStripMenuItem.Text = "Country";
             // 
             // 無ToolStripMenuItem
             // 
             this.無ToolStripMenuItem.Name = "無ToolStripMenuItem";
-            this.無ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.無ToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.無ToolStripMenuItem.Text = "無";
             // 
             // ImageList1
@@ -233,6 +236,15 @@ namespace ADO.Homework
             this.ImageList2.Images.SetKeyName(17, "FLGFIN.ICO");
             this.ImageList2.Images.SetKeyName(18, "FLGFRAN.ICO");
             // 
+            // customersTableAdapter1
+            // 
+            this.customersTableAdapter1.ClearBeforeFill = true;
+            // 
+            // nwDataSet1
+            // 
+            this.nwDataSet1.DataSetName = "NWDataSet";
+            this.nwDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // Frm7_Customers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -249,6 +261,7 @@ namespace ADO.Homework
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nwDataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -271,5 +284,7 @@ namespace ADO.Homework
         private System.Windows.Forms.ToolStripMenuItem 無ToolStripMenuItem;
         internal System.Windows.Forms.ImageList ImageList1;
         internal System.Windows.Forms.ImageList ImageList2;
+        private NWDataSetTableAdapters.CustomersTableAdapter customersTableAdapter1;
+        private NWDataSet nwDataSet1;
     }
 }

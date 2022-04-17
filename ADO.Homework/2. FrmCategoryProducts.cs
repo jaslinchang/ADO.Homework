@@ -17,10 +17,13 @@ namespace ADO.Homework
         public FrmCategoryProducts()
         {
             InitializeComponent();
-            LoadCategoriesToComboBox();
+            LoadCategoriesToComboBox1();  //Connect
+            LoadCategoriesToComboBox2();  //Disconnect 1.0
+            LoadCategoriesToComboBox3();  //Disconnect 2.0
         }
-
-        private void LoadCategoriesToComboBox()
+               
+        //Connect
+        private void LoadCategoriesToComboBox1()
         {
             try
             {
@@ -39,7 +42,6 @@ namespace ADO.Homework
                     {
                         string name = $"{dataReader["CategoryName"]}";
                         this.comboBox1.Items.Add(name);
-                        this.comboBox2.Items.Add(name);
                     }
                 }
            
@@ -50,55 +52,28 @@ namespace ADO.Homework
             }
         }
 
-        private void FrmCategoryProducts_Load(object sender, EventArgs e)
+        //Disconnect 1.0
+        private void LoadCategoriesToComboBox2()
         {
-            //Connect
-            try
+            this.categoriesTableAdapter1.Fill(this.nwDataSet1.Categories);
+            for (int i = 0; i < nwDataSet1.Categories.Rows.Count; i++)
             {
-                //step1  準備連線
-                conn = new SqlConnection("Data Source=.;Initial Catalog=Northwind;Integrated Security=True");
-                conn.Open();  //開啟連接
-
-                //step 2  下指令
-                SqlCommand command = new SqlCommand("select CategoryName from Categories" , conn);
-                SqlDataReader dataReader = command.ExecuteReader();
-
-                //step3  讀取資料
-                this.listBox1.Items.Clear();
-                while (dataReader.Read())
-                {
-                   string  name = $"{dataReader["CategoryName"]}";
-                    this.comboBox1.Items.Add(name);
-                    this.comboBox2.Items.Add(name);
-                }
+                this.comboBox2.Items.Add(this.nwDataSet1.Categories[i][1]);
             }
-            catch (Exception ex)  //保護程式，抓一些無法掌控的錯誤
+        }
+       
+        //Disconnect 2.0
+        private void LoadCategoriesToComboBox3()
+        {
+            this.productsTableAdapter1.Fill(this.nwDataSet1.Products);
+            this.categoriesTableAdapter1.Fill(this.nwDataSet1.Categories);
+            for (int i = 0; i < nwDataSet1.Categories.Rows.Count; i++)
             {
-                MessageBox.Show(ex.Message);  //show 錯誤的提示訊息
+                this.comboBox3.Items.Add(this.nwDataSet1.Categories[i][1]);
             }
-            finally
-            {
-                if (conn != null)
-                {
-                    conn.Close();  //斷開連接
-                }
-            }
-            //Disconnect
-            //this.categoriesTableAdapter1.Fill(this.nwDataSet1.Categories);
-
-            //for(int i = 0; i < this.nwDataSet1.Tables.Count; i++)
-            //{
-            //    DataTable table =this.nwDataSet1.Tables[i];
-            //    string s = "";
-            //    for(int column = 0; column < table.Columns.Count; column++)
-            //    {
-            //        s = table.Columns[column].ColumnName;
-            //        this.comboBox2.Items.Add(s);
-
-            //    }
-            //}
         }
 
+        //===============================================
         //Connect
         SqlConnection conn = null;
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -111,22 +86,20 @@ namespace ADO.Homework
                 conn.Open();
 
                 //step 2  下指令
-                string bb = $"SELECT c.CategoryName, ProductName FROM Categories c join Products p on c.CategoryID = p.CategoryID where c.CategoryName = '{comboBox1.Text}'";
-                SqlCommand command = new SqlCommand(bb, conn);
+                //string bb = $"SELECT c.CategoryName, ProductName FROM Categories c join Products p on c.CategoryID = p.CategoryID where c.CategoryName = '{comboBox1.Text}'";
+                
+                SqlCommand command = new SqlCommand($"SELECT ProductName FROM products p join Categories c on p.CategoryID = c.CategoryID  where CategoryName ='{comboBox1.Text}'", conn);
                 SqlDataReader dataReader = command.ExecuteReader();
                 while (dataReader.Read())
                 {
                     string s = $"{dataReader["ProductName"]}";
                     this.listBox1.Items.Add(s);
-                }               
-
+                }             
             }
-            
             catch (Exception ex)  
             {
                 MessageBox.Show(ex.Message);  
             }
-
             finally
             {
                 if (conn != null)
@@ -135,31 +108,24 @@ namespace ADO.Homework
                 }
             }
         }
-
-        //===============================================
-        //DisConnect
-
+        
+        
+        //DisConnect 1.0
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {            
-            //1.0
-            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=Northwind;Integrated Security=True");
-            
-            SqlDataAdapter adapter = new SqlDataAdapter($" SELECT ProductName FROM Categories c join Products p on c.CategoryID = p.CategoryID where c.CategoryName = '{comboBox2.Text}'", conn);
-           
+            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=Northwind;Integrated Security=True");            
+            SqlDataAdapter adapter = new SqlDataAdapter($"SELECT ProductName FROM products p join Categories c on p.CategoryID = c.CategoryID  where CategoryName ='{comboBox2.Text}'", conn);
             DataSet ds = new DataSet();
-
-            adapter.Fill(ds);
-           
-            this.dataGridView1.DataSource = ds.Tables[0];
-
-
-            /*//2.0
-         
-            //string aa =comboBox2.Text;
-            this.categoriesTableAdapter1.FillByCategoryName(this.nwDataSet1.Categories, comboBox2.Text);
-            this.dataGridView1.DataSource = this.nwDataSet1.Categories;
-            */
-
+            adapter.Fill(ds);           
+            this.dataGridView1.DataSource = ds.Tables[0];           
         }
+
+        //DisConnect 2.0
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.products1TableAdapter1.FillCategoryName(nwDataSet1.Products1, comboBox3.Text);
+            dataGridView2.DataSource = nwDataSet1.Products1;
+        }
+
     }
 }

@@ -24,6 +24,7 @@ namespace ADO.Homework
 
         private void LoadCountryToComboBox()
         {  //載入country到combobox
+            this.comboBox1.Items.Add("(ALL)");
             try
             {
                 using (SqlConnection conn=new SqlConnection(Settings.Default.NorthwindConnectionString))
@@ -32,7 +33,7 @@ namespace ADO.Homework
                     SqlCommand command = new SqlCommand("select distinct country from customers",conn);
 
                     SqlDataReader dataReader = command.ExecuteReader();
-                    this.comboBox1.Items.Add("(ALL)");
+                    
                     while (dataReader.Read())
                     {
                         string s = $"{dataReader["country"]}";
@@ -72,9 +73,24 @@ namespace ADO.Homework
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        {            
             if (this.comboBox1.Text == "(ALL)")
             {
+                //disconnect
+                this.customersTableAdapter1.Fill(this.nwDataSet1.Customers);
+                this.listView1.Items.Clear();
+                for(int i = 0; i < nwDataSet1.Customers.Rows.Count; i++)
+                {
+                    ListViewItem lvi = this.listView1.Items.Add(nwDataSet1.Customers.Rows[i][0].ToString());
+                    for(int j = 0; j < nwDataSet1.Customers.Columns.Count; j++)
+                    {
+                        lvi.SubItems.Add(nwDataSet1.Customers.Rows[i][j].ToString());
+                    }
+                }
+
+
+                /*  connect
+               
                 try
                 {
                     using (SqlConnection conn = new SqlConnection(Settings.Default.NorthwindConnectionString))
@@ -122,9 +138,24 @@ namespace ADO.Homework
                 {
                     MessageBox.Show(ex.Message);
                 }
+ 
+                */
             }
             else
             {
+                //disconnect
+                this.customersTableAdapter1.FillByCountry(this.nwDataSet1.Customers,this.comboBox1.Text);
+                listView1.Items.Clear();
+                for (int i = 0; i < nwDataSet1.Customers.Rows.Count; i++)
+                {
+                    ListViewItem lvi = this.listView1.Items.Add(this.nwDataSet1.Customers.Rows[i][0].ToString());
+                    for(int j = 1; j < this.nwDataSet1.Customers.Columns.Count; j++)
+                    {
+                        lvi.SubItems.Add(this.nwDataSet1.Customers.Rows[i][j].ToString());
+                    }
+                }
+
+                 /*disconnect
                 try
                 {
                     using (SqlConnection conn = new SqlConnection(Settings.Default.NorthwindConnectionString))
@@ -173,10 +204,10 @@ namespace ADO.Homework
                 {
                     MessageBox.Show(ex.Message);
                 }
-            }
-          
+                 */
 
-            
+            }
+                     
         }
 
         private void detailsViewToolStripMenuItem_Click(object sender, EventArgs e)
@@ -196,12 +227,63 @@ namespace ADO.Homework
 
         private void customerIDAscToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.listView1.Sort();
+            if (this.comboBox1.Text == "(ALL)")
+            {
+                this.customersTableAdapter1.FillByIDAscAll(this.nwDataSet1.Customers);
+                this.listView1.Items.Clear();
+                for (int i = 0; i < this.nwDataSet1.Customers.Rows.Count; i++)
+                {
+                    ListViewItem lvi = this.listView1.Items.Add(this.nwDataSet1.Customers.Rows[i][0].ToString());
+                    for (int k = 1; k < this.nwDataSet1.Customers.Columns.Count; k++)
+                    {
+                        lvi.SubItems.Add(this.nwDataSet1.Customers.Rows[i][k].ToString());
+                    }
+                }
+            }
+            else
+            {
+                this.customersTableAdapter1.FillByIDAsc(this.nwDataSet1.Customers, this.comboBox1.Text);
+                this.listView1.Items.Clear();
+                for (int i = 0; i < this.nwDataSet1.Customers.Rows.Count; i++)
+                {
+                    ListViewItem lvi = this.listView1.Items.Add(this.nwDataSet1.Customers.Rows[i][0].ToString());
+                    for (int k = 1; k < this.nwDataSet1.Customers.Columns.Count; k++)
+                    {
+                        lvi.SubItems.Add(this.nwDataSet1.Customers.Rows[i][k].ToString());
+                    }
+                }
+            }            
+
         }
 
         private void customersIDDescToolStripMenuItem_Click(object sender, EventArgs e)
         {
-   
+            if (this.comboBox1.Text == "(ALL)")
+            {
+                this.customersTableAdapter1.FillByIDDescAll(this.nwDataSet1.Customers);
+                this.listView1.Items.Clear();
+                for (int i = 0; i < this.nwDataSet1.Customers.Rows.Count; i++)
+                {
+                    ListViewItem lvi = this.listView1.Items.Add(this.nwDataSet1.Customers.Rows[i][0].ToString());
+                    for (int k = 1; k < this.nwDataSet1.Customers.Columns.Count; k++)
+                    {
+                        lvi.SubItems.Add(this.nwDataSet1.Customers.Rows[i][k].ToString());
+                    }
+                }
+            }
+            else
+            {
+                this.customersTableAdapter1.FillByIDDesc(this.nwDataSet1.Customers, this.comboBox1.Text);
+                this.listView1.Items.Clear();
+                for (int i = 0; i < this.nwDataSet1.Customers.Rows.Count; i++)
+                {
+                    ListViewItem lvi = this.listView1.Items.Add(this.nwDataSet1.Customers.Rows[i][0].ToString());
+                    for (int k = 1; k < this.nwDataSet1.Customers.Columns.Count; k++)
+                    {
+                        lvi.SubItems.Add(this.nwDataSet1.Customers.Rows[i][k].ToString());
+                    }
+                }
+            }
 
 
 

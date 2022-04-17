@@ -42,13 +42,22 @@ namespace ADO.Homework
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.categoriesTableAdapter1 = new ADO.Homework.NWDataSetTableAdapters.CategoriesTableAdapter();
             this.productsTableAdapter1 = new ADO.Homework.NWDataSetTableAdapters.ProductsTableAdapter();
             this.nwDataSet1 = new ADO.Homework.NWDataSet();
+            this.products1TableAdapter1 = new ADO.Homework.NWDataSetTableAdapters.Products1TableAdapter();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nwDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,6 +120,7 @@ namespace ADO.Homework
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
@@ -146,7 +156,7 @@ namespace ADO.Homework
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(731, 408);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Disconnect";
+            this.tabPage2.Text = "Disconnect 1.0";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
@@ -154,6 +164,7 @@ namespace ADO.Homework
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(46, 143);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 50;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(637, 249);
             this.dataGridView1.TabIndex = 20;
@@ -202,6 +213,73 @@ namespace ADO.Homework
             this.label6.TabIndex = 17;
             this.label6.Text = "Disconnected";
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.dataGridView2);
+            this.tabPage3.Controls.Add(this.label7);
+            this.tabPage3.Controls.Add(this.comboBox3);
+            this.tabPage3.Controls.Add(this.label8);
+            this.tabPage3.Controls.Add(this.label9);
+            this.tabPage3.Location = new System.Drawing.Point(4, 29);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(731, 408);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Disconnect 2.0";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(49, 138);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(637, 249);
+            this.dataGridView2.TabIndex = 25;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(45, 113);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(100, 22);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "Products:";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(199, 67);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(144, 28);
+            this.comboBox3.TabIndex = 21;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(45, 67);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(140, 22);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "CategoryName:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.Location = new System.Drawing.Point(45, 22);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(130, 22);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "Disconnected";
+            // 
             // categoriesTableAdapter1
             // 
             this.categoriesTableAdapter1.ClearBeforeFill = true;
@@ -215,6 +293,10 @@ namespace ADO.Homework
             this.nwDataSet1.DataSetName = "NWDataSet";
             this.nwDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // products1TableAdapter1
+            // 
+            this.products1TableAdapter1.ClearBeforeFill = true;
+            // 
             // FrmCategoryProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -223,13 +305,15 @@ namespace ADO.Homework
             this.Controls.Add(this.tabControl1);
             this.Name = "FrmCategoryProducts";
             this.Text = "FrmCategoryProducts";
-            this.Load += new System.EventHandler(this.FrmCategoryProducts_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nwDataSet1)).EndInit();
             this.ResumeLayout(false);
 
@@ -253,5 +337,12 @@ namespace ADO.Homework
         private System.Windows.Forms.Label label6;
         private NWDataSet nwDataSet1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private NWDataSetTableAdapters.Products1TableAdapter products1TableAdapter1;
     }
 }

@@ -12,3 +12,4 @@ namespace ADO.Homework {
     public partial class NWDataSet {
     }
 }
+
