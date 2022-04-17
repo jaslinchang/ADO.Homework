@@ -116,6 +116,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CODataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="7. FrmCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="7. FrmCustomers.Designer.cs">
+      <DependentUpon>7. FrmCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="7. FrmLogon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="7. FrmLogon.Designer.cs">
+      <DependentUpon>7. FrmLogon.cs</DependentUpon>
+    </Compile>
     <Compile Include="NWDataSet.cs">
       <DependentUpon>NWDataSet.xsd</DependentUpon>
     </Compile>
@@ -146,6 +158,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="6. FrmMyAlbum\FrmTool.resx">
       <DependentUpon>FrmTool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="7. FrmCustomers.resx">
+      <DependentUpon>7. FrmCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="7. FrmLogon.resx">
+      <DependentUpon>7. FrmLogon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -216,10 +234,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DatabaseWorld.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="DatabaseWorld_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>DatabaseWorld.mdf</DependentUpon>
     </Content>
   </ItemGroup>

@@ -16,7 +16,8 @@ namespace ADO.Homework
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMyAlbum_V1());
+            //Application.Run(new FrmCategoryProducts());
+            Application.Run(new Frm7_Customers());
 
         }
     }

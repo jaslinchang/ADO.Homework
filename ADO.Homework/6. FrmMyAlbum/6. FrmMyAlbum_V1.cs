@@ -1,5 +1,6 @@
 ﻿using ADO.Homework._6._FrmMyAlbum;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,44 +18,9 @@ namespace ADO.Homework
         public FrmMyAlbum_V1()
         {
             InitializeComponent();
-
-            
-            this.countryTableAdapter1.Fill(this.coDataSet1.Country);
-            var arr = new List<string>;
-
-            for (int b = 0; b < coDataSet1.Tables.Count; b++)
-            {
-                DataTable table = this.coDataSet1.Tables[b];
-                string s = "";
-                for (int column = 0; column < table.Columns.Count-1; column++)
-                {
-                    s = table.Columns[column].ColumnName + "  ";
-                    string a = "";
-                    for (int row = 0; row < table.Rows.Count; row++)
-                    {
-                        a = table.Rows[row][1].ToString();
-
-                        for (int i = 0; i < table.Rows.Count; i++)
-                        {
-                            LinkLabel x = new LinkLabel();
-                            x.Text = a;
-                            x.Left = 25;
-                            x.Top = 30 * i;
-                            x.Tag = i;  //設他為ID
-                            x.Click += X_Click;
-                           
-                            this.splitContainer2.Panel1.Controls.Add(x);
-                        }
-                      
-
-                        //MessageBox.Show(a);
-                    }
+            LoadCountryName();
 
 
-                }                                                                        
-
-                    
-            }
 
             //for (int k = 0; k < coDataSet1.Tables.Count; k++)
             //{
@@ -86,26 +52,58 @@ namespace ADO.Homework
             //        }
 
             //    }
-               
-          
+
             //}
 
 
 
+            /*
+            string[] arr = new string[5];
 
-            //string[] arr = new string[5];
+            for (int i = 0; i < 5; i++)
+            {
+                LinkLabel x = new LinkLabel();
+                x.Text = arr[i];
+                x.Left = 25;
+                x.Top = 30 * i;
+                x.Tag = i;  //設他為ID
+                x.Click += X_Click;
 
-            //for (int i = 0; i < 5; i++)
-            //{
-            //    LinkLabel x = new LinkLabel();
-            //    x.Text = arr[i];
-            //    x.Left = 25;
-            //    x.Top = 30 * i;
-            //    x.Tag = i;  //設他為ID
-            //    x.Click += X_Click;
+                this.splitContainer2.Panel1.Controls.Add(x);
+            }
+            */
+        }
 
-            //    this.splitContainer2.Panel1.Controls.Add(x);
-            //}
+        private void LoadCountryName()
+        {
+            this.countryTableAdapter1.Fill(this.coDataSet1.Country);
+            List<string> Count = new List<string>();
+
+            for (int b = 0; b < coDataSet1.Tables.Count; b++)
+            {
+                DataTable table = this.coDataSet1.Tables[b];
+                string s = "";
+                for (int column = 0; column < table.Columns.Count - 1; column++)
+                {
+                    s = table.Columns[column].ColumnName + "  ";
+                    //string a = "";
+                    for (int row = 0; row < table.Rows.Count; row++)
+                    {
+                        Count.Add(table.Rows[row][1].ToString());                     
+                    }
+                }
+                for (int i = 0; i < table.Rows.Count; i++)
+                {
+                    LinkLabel x = new LinkLabel();
+                    x.Text = Count[i];
+                    x.Left = 25;
+                    x.Top = 30 * i;
+                    x.Tag = i;  //設他為ID
+                    x.Click += X_Click;
+
+                    this.splitContainer2.Panel1.Controls.Add(x);
+                }
+            }
         }
 
         private void X_Click(object sender, EventArgs e)
@@ -124,14 +122,8 @@ namespace ADO.Homework
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-           
-          
-            
-
-
-            //FrmTool ft = new FrmTool();
-            //ft.Show();
+            FrmTool ft = new FrmTool();
+            ft.Show();
 
 
 

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using ADO.Homework.Properties;
 
 namespace ADO.Homework
 {
@@ -15,8 +16,39 @@ namespace ADO.Homework
     {
         public FrmCategoryProducts()
         {
-            InitializeComponent();          
-        }       
+            InitializeComponent();
+            LoadCategoriesToComboBox();
+        }
+
+        private void LoadCategoriesToComboBox()
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Settings.Default.NorthwindConnectionString))
+                {
+                    //step1  準備連線               
+                    conn.Open();  //開啟連接
+
+                    //step 2  下指令
+                    SqlCommand command = new SqlCommand("select CategoryName from Categories", conn);
+                    SqlDataReader dataReader = command.ExecuteReader();
+
+                    //step3  讀取資料
+                    this.listBox1.Items.Clear();
+                    while (dataReader.Read())
+                    {
+                        string name = $"{dataReader["CategoryName"]}";
+                        this.comboBox1.Items.Add(name);
+                        this.comboBox2.Items.Add(name);
+                    }
+                }
+           
+        }
+            catch (Exception ex)  //保護程式，抓一些無法掌控的錯誤
+            {
+                MessageBox.Show(ex.Message);  //show 錯誤的提示訊息
+            }
+        }
 
         private void FrmCategoryProducts_Load(object sender, EventArgs e)
         {

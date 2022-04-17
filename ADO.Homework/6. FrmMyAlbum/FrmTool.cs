@@ -17,15 +17,28 @@ namespace ADO.Homework._6._FrmMyAlbum
             InitializeComponent();
         }
 
-       
+        private void pictureBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.pictureBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.cODataSet);
+
+        }
+
+        private void FrmTool_Load(object sender, EventArgs e)
+        {
+            // TODO: 這行程式碼會將資料載入 'cODataSet.Picture' 資料表。您可以視需要進行移動或移除。
+            this.pictureTableAdapter.Fill(this.cODataSet.Picture);
+
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
             DialogResult result = this.openFileDialog1.ShowDialog();
             if (result == DialogResult.OK)
             {
-                MessageBox.Show("OK  " + this.openFileDialog1.FileName);  //秀出檔案的路徑
-                //this.pictureBox1.Image = Image.FromFile(this.openFileDialog1.FileName);
+                //MessageBox.Show("OK  " + this.openFileDialog1.FileName);  //秀出檔案的路徑
+                this.picturePictureBox.Image = Image.FromFile(this.openFileDialog1.FileName);
             }
             else
             {
