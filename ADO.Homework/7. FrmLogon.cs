@@ -66,8 +66,8 @@ namespace ADO.Homework
                     if (dataReader.HasRows)
                     {
                         MessageBox.Show("Log ON 成功");
-                        Frm7_Customers frm7 = new Frm7_Customers();
-                        frm7.Show();
+                        Frm0_main f0 = new Frm0_main();
+                        f0.Show();
                         this.Hide();
                     }
                     else
