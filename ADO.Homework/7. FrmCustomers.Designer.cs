@@ -121,26 +121,26 @@ namespace ADO.Homework
             this.orderByToolStripMenuItem,
             this.groupByToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(143, 114);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 136);
             // 
             // detailsViewToolStripMenuItem
             // 
             this.detailsViewToolStripMenuItem.Name = "detailsViewToolStripMenuItem";
-            this.detailsViewToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.detailsViewToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.detailsViewToolStripMenuItem.Text = "Details View";
             this.detailsViewToolStripMenuItem.Click += new System.EventHandler(this.detailsViewToolStripMenuItem_Click);
             // 
             // largeIconToolStripMenuItem
             // 
             this.largeIconToolStripMenuItem.Name = "largeIconToolStripMenuItem";
-            this.largeIconToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.largeIconToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.largeIconToolStripMenuItem.Text = "Large Icon";
             this.largeIconToolStripMenuItem.Click += new System.EventHandler(this.largeIconToolStripMenuItem_Click);
             // 
             // smallIconToolStripMenuItem
             // 
             this.smallIconToolStripMenuItem.Name = "smallIconToolStripMenuItem";
-            this.smallIconToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.smallIconToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.smallIconToolStripMenuItem.Text = "Small Icon";
             this.smallIconToolStripMenuItem.Click += new System.EventHandler(this.smallIconToolStripMenuItem_Click);
             // 
@@ -150,7 +150,7 @@ namespace ADO.Homework
             this.customerIDAscToolStripMenuItem,
             this.customersIDDescToolStripMenuItem});
             this.orderByToolStripMenuItem.Name = "orderByToolStripMenuItem";
-            this.orderByToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.orderByToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.orderByToolStripMenuItem.Text = "Order by";
             // 
             // customerIDAscToolStripMenuItem
@@ -173,19 +173,19 @@ namespace ADO.Homework
             this.countryToolStripMenuItem,
             this.無ToolStripMenuItem});
             this.groupByToolStripMenuItem.Name = "groupByToolStripMenuItem";
-            this.groupByToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.groupByToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.groupByToolStripMenuItem.Text = "Group by";
             // 
             // countryToolStripMenuItem
             // 
             this.countryToolStripMenuItem.Name = "countryToolStripMenuItem";
-            this.countryToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.countryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.countryToolStripMenuItem.Text = "Country";
             // 
             // 無ToolStripMenuItem
             // 
             this.無ToolStripMenuItem.Name = "無ToolStripMenuItem";
-            this.無ToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.無ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.無ToolStripMenuItem.Text = "無";
             // 
             // ImageList1

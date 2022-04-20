@@ -30,6 +30,8 @@ namespace ADO.Homework {
         
         private Picture1DataTable tablePicture1;
         
+        private global::System.Data.DataRelation relationFK_Picture_Country;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -242,6 +244,7 @@ namespace ADO.Homework {
                     this.tablePicture1.InitVars();
                 }
             }
+            this.relationFK_Picture_Country = this.Relations["FK_Picture_Country"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -258,6 +261,10 @@ namespace ADO.Homework {
             base.Tables.Add(this.tablePicture);
             this.tablePicture1 = new Picture1DataTable();
             base.Tables.Add(this.tablePicture1);
+            this.relationFK_Picture_Country = new global::System.Data.DataRelation("FK_Picture_Country", new global::System.Data.DataColumn[] {
+                        this.tableCountry.CountryIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePicture.CountryIDColumn}, false);
+            this.Relations.Add(this.relationFK_Picture_Country);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -746,14 +753,17 @@ namespace ADO.Homework {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PictureRow AddPictureRow(string PictureName, string Description, byte[] Picture, int CountryID) {
+            public PictureRow AddPictureRow(string PictureName, string Description, byte[] Picture, CountryRow parentCountryRowByFK_Picture_Country) {
                 PictureRow rowPictureRow = ((PictureRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         PictureName,
                         Description,
                         Picture,
-                        CountryID};
+                        null};
+                if ((parentCountryRowByFK_Picture_Country != null)) {
+                    columnValuesArray[4] = parentCountryRowByFK_Picture_Country[0];
+                }
                 rowPictureRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPictureRow);
                 return rowPictureRow;
@@ -1311,6 +1321,17 @@ namespace ADO.Homework {
             public void SetCountryNameNull() {
                 this[this.tableCountry.CountryNameColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public PictureRow[] GetPictureRows() {
+                if ((this.Table.ChildRelations["FK_Picture_Country"] == null)) {
+                    return new PictureRow[0];
+                }
+                else {
+                    return ((PictureRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Picture_Country"])));
+                }
+            }
         }
         
         /// <summary>
@@ -1399,6 +1420,17 @@ namespace ADO.Homework {
                 }
                 set {
                     this[this.tablePicture.CountryIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CountryRow CountryRow {
+                get {
+                    return ((CountryRow)(this.GetParentRow(this.Table.ParentRelations["FK_Picture_Country"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Picture_Country"]);
                 }
             }
             
@@ -2573,18 +2605,18 @@ SELECT PictureID, PictureName, Description, Picture, CountryID FROM Picture WHER
             this._commandCollection[0].CommandText = @"SELECT          Picture.PictureID, Picture.PictureName, Picture.Description, Picture.Picture, Picture.CountryID
 FROM              Country INNER JOIN
                             Picture ON Country.CountryId = Picture.CountryID
-WHERE          (Country.CountryId = @countryID)";
+WHERE          (Country.CountryId = @CountryID)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@countryID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CountryId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CountryID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CountryId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int FillCountry(CODataSet.Picture1DataTable dataTable, int countryID) {
+        public virtual int FillCountry(CODataSet.Picture1DataTable dataTable, int CountryID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(countryID));
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(CountryID));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -2596,9 +2628,9 @@ WHERE          (Country.CountryId = @countryID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CODataSet.Picture1DataTable GetDataCountry(int countryID) {
+        public virtual CODataSet.Picture1DataTable GetDataCountry(int CountryID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(countryID));
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(CountryID));
             CODataSet.Picture1DataTable dataTable = new CODataSet.Picture1DataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
