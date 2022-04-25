@@ -18,9 +18,12 @@ namespace ADO.Homework
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Frm7_Logon());
 
-            Application.Run(new FrmMyAlbum_V1());
+            //Application.Run(new FrmMyAlbum_V1());
+            //Application.Run(new Frm6_MyAlbumShow());
+            Application.Run(new Frm6MyAlbum_V2());
+
             //Application.Run(new Frm8_TreeView());
-            //Application.Run(new Frm7_Customers());
+
 
         }
     }

@@ -41,12 +41,14 @@ namespace ADO.Homework
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int a = 100;
-            int b = 66;
-            int c = 77;
+            Random r = new Random();
+            int a = r.Next(1, 100);
+            int b = r.Next(1, 100);
+            int c = r.Next(1, 100);
             int[] arr = new int[] { a, b, c };
 
-            labAnswer.Text = "三個數100、66、77 ，\n最大值為" + arr.Max() + "最小值為" + arr.Min();
+            labAnswer.Text = $"三個數 : {a}、{b}、{c}，最大值為 '{arr.Max()}'，最小值為'{arr.Min()}'";
+
         }
 
         private void btnFor_Click(object sender, EventArgs e)
@@ -238,6 +240,92 @@ namespace ADO.Homework
         private void btnClear_Click(object sender, EventArgs e)
         {
             labAnswer.Text = "結果";
+        }
+
+        private void btnTree_Click(object sender, EventArgs e)
+        {
+            string result = "";
+            int Row = int.Parse(txtRow.Text);
+
+            result += "* ";
+            for (int i = 0; i < Row; i++)
+            {
+                for (int k = 1; k <= Row; k++)
+                {
+                    if (k == i)
+                    {
+                        result += "* ";
+                    }
+                    if (k > i)
+                    {
+                        result += " ";
+                    }
+                    else result += "* ";
+                }
+                result += "\n";
+            }
+            labAnswer.Text = result;
+        }
+
+        private void btnSwap_Click(object sender, EventArgs e)
+        {
+            int n1 = 100, n2 = 200;
+            string result = "換位前n1=" + n1 + ", n2=" + n2 + "\n";
+            Swap(ref n1, ref n2);
+
+            labAnswer.Text = result + "換位後n1=" + n1 + ", n2=" + n2;
+        }
+
+        void Swap(ref int n1, ref int n2)
+        {
+            int T = n1;
+            n1 = n2;
+            n2 = T;
+
+        }
+
+        private void btn1010_Click(object sender, EventArgs e)
+        {
+            string result = "";
+            int[,] arr = new int[10, 10];
+
+            for (int i = 0; i < arr.GetLength(0); i += 2)
+            {
+                for (int k = 0; k < arr.GetLength(0); k += 2)
+                {
+                    arr[i, k] = 1;
+                }
+            }
+            for (int i = 1; i < arr.GetLength(0); i += 2)
+            {
+                for (int k = 1; k < arr.GetLength(0); k += 2)
+                {
+                    arr[i, k] = 1;
+                }
+            }
+
+            for (int a = 0; a < arr.GetLength(0); a++)
+            {
+                for (int b = 0; b < arr.GetLength(1); b++)
+                {
+                    result += arr[a, b] + " ";
+                }
+                result += "\n";
+            }
+            labAnswer.Text = result;
+        }
+
+        private void btn1Sum_Click(object sender, EventArgs e)
+        {
+            int[] arr = new int[] { 1, 5, 6, 8, 7, 97, 54, 887, 65, 578 };
+            int sum = 0;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                sum += arr[i];
+            }
+
+            labAnswer.Text = "int 陣列 arr[1 , 5 , 6 , 8 , 7 , 97 , 54 , 887 , 65 , 578]" + "\n加總為 " + sum;
         }
     }
     

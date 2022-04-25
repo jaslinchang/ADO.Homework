@@ -157,6 +157,12 @@
     <Compile Include="8. FrmTreeView.Designer.cs">
       <DependentUpon>8. FrmTreeView.cs</DependentUpon>
     </Compile>
+    <Compile Include="6.1 FrmMyAlbumShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.1 FrmMyAlbumShow.Designer.cs">
+      <DependentUpon>6.1 FrmMyAlbumShow.cs</DependentUpon>
+    </Compile>
     <Compile Include="NWDataSet.cs">
       <DependentUpon>NWDataSet.xsd</DependentUpon>
     </Compile>
@@ -193,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="6. FrmMyAlbum_V2.resx">
       <DependentUpon>6. FrmMyAlbum_V2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.1 FrmMyAlbumShow.resx">
+      <DependentUpon>6.1 FrmMyAlbumShow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="7. FrmCustomers.resx">
       <DependentUpon>7. FrmCustomers.cs</DependentUpon>
