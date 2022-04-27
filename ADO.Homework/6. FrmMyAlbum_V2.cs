@@ -102,22 +102,19 @@ namespace ADO.Homework
                         pic.Click += Pic_Click;
                         pic.MouseEnter += Pic_MouseEnter;
                         pic.MouseLeave += Pic_MouseLeave;
-                        this.flowLayoutPanel2.Controls.Add(pic);                         
-
+                        this.flowLayoutPanel2.Controls.Add(pic);                       
                     }
                    
                 }
             }
 
             catch (Exception ex) { MessageBox.Show(ex.Message); }
-        }
-                
+        }             
 
-        #region 處理點擊照片事件
+        //處理點擊照片事件
 
         Frm6_MyAlbumShow f = null;
-        PictureBox p = null;
-       
+        PictureBox p = null;      
 
         private void Pic_Click(object sender, EventArgs e)
         {        
@@ -201,14 +198,13 @@ namespace ADO.Homework
         private void Pic_MouseEnter(object sender, EventArgs e)
         {
             PictureBox x = sender as PictureBox;
-            x.BackColor = Color.Red;
+            x.BackColor = Color.Orange;
         }
         private void Pic_MouseLeave(object sender, EventArgs e)
         {
             PictureBox x = sender as PictureBox;
             x.BackColor = Color.Transparent;
         }
-        #endregion
         #endregion
         //=========================================================================
 
@@ -258,8 +254,7 @@ namespace ADO.Homework
 
         }
         private void ShowImagePage2(int countryID)
-        {
-            //Select
+        {  //Select
             try
             {
                 using (SqlConnection conn = new SqlConnection(Settings.Default.DatabaseWorldConnectionString))
@@ -276,7 +271,7 @@ namespace ADO.Homework
                         byte[] bytes = (byte[])dataReader["Picture"];
                         MemoryStream ms = new MemoryStream(bytes);  //轉型用
 
-                        pic.ContextMenuStrip = this.contextMenuStrip1;
+                        pic.Name = dataReader["PictureID"].ToString();
                         pic.Image = Image.FromStream(ms);
                         pic.SizeMode = PictureBoxSizeMode.StretchImage;
                         pic.Width = 250;
@@ -285,9 +280,8 @@ namespace ADO.Homework
                         pic.Padding = new Padding(6, 6, 6, 6);
                         pic.MouseEnter += Pic_MouseEnter;
                         pic.MouseLeave += Pic_MouseLeave;
-
+                        pic.MouseClick += Pic_MouseClick;                        
                         this.flowLayoutPanel3.Controls.Add(pic);
-
                     }
 
                 }
@@ -296,7 +290,27 @@ namespace ADO.Homework
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 
         }
-       
+
+        private void Pic_MouseClick(object sender, MouseEventArgs e)
+        {
+            PictureBox x = sender as PictureBox;
+            x.BackColor = Color.Red;
+            if (e.Button == MouseButtons.Right)
+            {
+                DialogResult result = MessageBox.Show("確認刪除此張照片?", "刪除照片" , MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    this.flowLayoutPanel3.Controls.RemoveAt(this.flowLayoutPanel3.Controls.IndexOf((PictureBox)sender));
+                    MessageBox.Show("刪除成功");
+                }
+                else if (result == DialogResult.No)
+                {
+                    MessageBox.Show("取消");
+                }
+            }
+        } 
+
         //開啟整個資料夾
         private void button1_Click(object sender, EventArgs e)
         {
@@ -321,6 +335,7 @@ namespace ADO.Homework
                         pic.Padding = new Padding(6, 6, 6, 6);
                         pic.MouseEnter += Pic_MouseEnter;
                         pic.MouseLeave += Pic_MouseLeave;
+                        pic.MouseClick += Pic_MouseClick1;
                         InsertPicture(pic);
                         this.flowLayoutPanel3.Controls.Add(pic);
                     }
@@ -328,9 +343,29 @@ namespace ADO.Homework
             }
           
         }
-        private void InsertPicture(PictureBox pic)
+
+        private void Pic_MouseClick1(object sender, MouseEventArgs e)
         {
-            //Insert 
+            PictureBox x = sender as PictureBox;
+            x.BackColor = Color.Red;
+            if (e.Button == MouseButtons.Right)
+            {
+                DialogResult result = MessageBox.Show("確認刪除此張照片?", "刪除照片", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    this.flowLayoutPanel3.Controls.RemoveAt(this.flowLayoutPanel3.Controls.IndexOf((PictureBox)sender));
+                    MessageBox.Show("刪除成功");
+                }
+                else if (result == DialogResult.No)
+                {
+                    MessageBox.Show("取消");
+                }
+            }
+        }
+
+        private void InsertPicture(PictureBox pic)
+        {  //Insert 
             try
             {
                 using (SqlConnection conn = new SqlConnection(Settings.Default.DatabaseWorldConnectionString))
@@ -379,25 +414,7 @@ namespace ADO.Homework
         {
             e.Effect = DragDropEffects.Copy;
         }
-        //刪除照片
-        private void 刪除照片ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-            PictureBox pp = ((PictureBox)sender);
-            pp.ContextMenuStrip = this.contextMenuStrip1;
-            int position = this.flowLayoutPanel2.Controls.IndexOf((PictureBox)sender);
-            MessageBox.Show(position.ToString());
-         
-            //this.flowLayoutPanel3.Controls.RemoveAt(position);
-            //MessageBox.Show("Remove Successful!!");
-            //PictureBox pictureBox = (PictureBox)sender;
-            //pictureBoxes.RemoveAt(this.flowLayoutPanel3.Controls.IndexOf(pictureBox));
-            //this.flowLayoutPanel3.Controls.RemoveAt(this.flowLayoutPanel3.Controls.IndexOf(pictureBox));
-            //if (this.flowLayoutPanel3.Controls.Count == 0)
-            //{
-            //    button3.Visible = false;
-            //}
-        }
+            
 
         #endregion
         //=========================================================================
@@ -422,15 +439,7 @@ namespace ADO.Homework
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
-        }
-
-        private void countryDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //countryIDToolStripTextBox.Text = "";
-            //int na = countryBindingSource.Position + 1;
-            //countryIDToolStripTextBox.Text = na.ToString();
-            //fillCountryToolStripButton.PerformClick();
-        }
+        }   
 
         private void countryBindingSource_CurrentChanged(object sender, EventArgs e)
         {
@@ -448,18 +457,7 @@ namespace ADO.Homework
                 this.picturePictureBox.Image = Image.FromFile(openFileDialog1.FileName);
             }
         }
-
-
-
-
-
-
-
-
         #endregion
-
-       
+               
     }
 }
-
-

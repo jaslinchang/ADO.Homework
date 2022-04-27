@@ -117,8 +117,7 @@ namespace ADO.Homework
             this.pictureTableAdapter1 = new ADO.Homework.CODataSetTableAdapters.PictureTableAdapter();
             this.coDataSet2 = new ADO.Homework.CODataSet();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.刪除照片ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label3 = new System.Windows.Forms.Label();
             countryIdLabel = new System.Windows.Forms.Label();
             countryNameLabel = new System.Windows.Forms.Label();
             pictureIDLabel = new System.Windows.Forms.Label();
@@ -164,7 +163,6 @@ namespace ADO.Homework
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceLabelLink)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.coDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // countryIdLabel
@@ -349,6 +347,7 @@ namespace ADO.Homework
             // 
             // splitContainer3.Panel1
             // 
+            this.splitContainer3.Panel1.Controls.Add(this.label3);
             this.splitContainer3.Panel1.Controls.Add(this.label7);
             this.splitContainer3.Panel1.Controls.Add(this.button1);
             this.splitContainer3.Panel1.Controls.Add(this.comboBox1);
@@ -697,7 +696,6 @@ namespace ADO.Homework
             this.countryDataGridView.RowTemplate.Height = 24;
             this.countryDataGridView.Size = new System.Drawing.Size(311, 242);
             this.countryDataGridView.TabIndex = 5;
-            this.countryDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.countryDataGridView_CellClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -1001,19 +999,16 @@ namespace ADO.Homework
             this.coDataSet2.DataSetName = "CODataSet";
             this.coDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // contextMenuStrip1
+            // label3
             // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.刪除照片ToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(123, 26);
-            // 
-            // 刪除照片ToolStripMenuItem
-            // 
-            this.刪除照片ToolStripMenuItem.Name = "刪除照片ToolStripMenuItem";
-            this.刪除照片ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.刪除照片ToolStripMenuItem.Text = "刪除照片";
-            this.刪除照片ToolStripMenuItem.Click += new System.EventHandler(this.刪除照片ToolStripMenuItem_Click);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(896, 83);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(147, 20);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "#刪除請按滑鼠右鍵";
             // 
             // Frm6MyAlbum_V2
             // 
@@ -1069,7 +1064,6 @@ namespace ADO.Homework
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceLabelLink)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.coDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1155,7 +1149,6 @@ namespace ADO.Homework
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private CODataSet coDataSet2;
         private System.Windows.Forms.BindingSource bindingSource1;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem 刪除照片ToolStripMenuItem;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -65,7 +65,7 @@ namespace ADO.Homework
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(42, 118);
+            this.label3.Location = new System.Drawing.Point(42, 108);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 22);
@@ -76,7 +76,7 @@ namespace ADO.Homework
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(42, 72);
+            this.label2.Location = new System.Drawing.Point(42, 66);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(140, 22);
@@ -88,7 +88,7 @@ namespace ADO.Homework
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(42, 27);
+            this.label1.Location = new System.Drawing.Point(42, 25);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 22);
@@ -100,16 +100,16 @@ namespace ADO.Homework
             this.listBox1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 14;
-            this.listBox1.Location = new System.Drawing.Point(152, 118);
+            this.listBox1.Location = new System.Drawing.Point(152, 108);
             this.listBox1.Margin = new System.Windows.Forms.Padding(2);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(557, 228);
+            this.listBox1.Size = new System.Drawing.Size(557, 200);
             this.listBox1.TabIndex = 11;
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(196, 72);
+            this.comboBox1.Location = new System.Drawing.Point(196, 66);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(144, 28);
@@ -126,7 +126,7 @@ namespace ADO.Homework
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(739, 441);
+            this.tabControl1.Size = new System.Drawing.Size(739, 404);
             this.tabControl1.TabIndex = 15;
             // 
             // tabPage1
@@ -139,7 +139,7 @@ namespace ADO.Homework
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(731, 408);
+            this.tabPage1.Size = new System.Drawing.Size(731, 371);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Connect";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -154,7 +154,7 @@ namespace ADO.Homework
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(731, 408);
+            this.tabPage2.Size = new System.Drawing.Size(731, 371);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Disconnect 1.0";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -162,18 +162,18 @@ namespace ADO.Homework
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(46, 143);
+            this.dataGridView1.Location = new System.Drawing.Point(46, 131);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 50;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(637, 249);
+            this.dataGridView1.Size = new System.Drawing.Size(637, 228);
             this.dataGridView1.TabIndex = 20;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(42, 118);
+            this.label4.Location = new System.Drawing.Point(42, 108);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 22);
@@ -183,7 +183,7 @@ namespace ADO.Homework
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(196, 72);
+            this.comboBox2.Location = new System.Drawing.Point(196, 66);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(144, 28);
@@ -194,7 +194,7 @@ namespace ADO.Homework
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(42, 72);
+            this.label5.Location = new System.Drawing.Point(42, 66);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(140, 22);
@@ -206,7 +206,7 @@ namespace ADO.Homework
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(42, 27);
+            this.label6.Location = new System.Drawing.Point(42, 25);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(130, 22);
@@ -222,7 +222,7 @@ namespace ADO.Homework
             this.tabPage3.Controls.Add(this.label9);
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(731, 408);
+            this.tabPage3.Size = new System.Drawing.Size(731, 371);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Disconnect 2.0";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -230,17 +230,17 @@ namespace ADO.Homework
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(49, 138);
+            this.dataGridView2.Location = new System.Drawing.Point(49, 127);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(637, 249);
+            this.dataGridView2.Size = new System.Drawing.Size(637, 228);
             this.dataGridView2.TabIndex = 25;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(45, 113);
+            this.label7.Location = new System.Drawing.Point(45, 104);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(100, 22);
@@ -250,7 +250,7 @@ namespace ADO.Homework
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(199, 67);
+            this.comboBox3.Location = new System.Drawing.Point(199, 61);
             this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(144, 28);
@@ -261,7 +261,7 @@ namespace ADO.Homework
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(45, 67);
+            this.label8.Location = new System.Drawing.Point(45, 61);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(140, 22);
@@ -273,7 +273,7 @@ namespace ADO.Homework
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(45, 22);
+            this.label9.Location = new System.Drawing.Point(45, 20);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(130, 22);
@@ -299,10 +299,11 @@ namespace ADO.Homework
             // 
             // FrmCategoryProducts
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 11F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(739, 441);
+            this.ClientSize = new System.Drawing.Size(739, 404);
             this.Controls.Add(this.tabControl1);
+            this.Font = new System.Drawing.Font("新細明體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Name = "FrmCategoryProducts";
             this.Text = "FrmCategoryProducts";
             this.tabControl1.ResumeLayout(false);
