@@ -88,12 +88,15 @@ namespace ADO.Homework
                 //step 2  下指令
                 //string bb = $"SELECT c.CategoryName, ProductName FROM Categories c join Products p on c.CategoryID = p.CategoryID where c.CategoryName = '{comboBox1.Text}'";
                 
-                SqlCommand command = new SqlCommand($"SELECT ProductName FROM products p join Categories c on p.CategoryID = c.CategoryID  where CategoryName ='{comboBox1.Text}'", conn);
+                SqlCommand command = new SqlCommand($"SELECT * FROM products p join Categories c on p.CategoryID = c.CategoryID  where CategoryName ='{comboBox1.Text}'", conn);
                 SqlDataReader dataReader = command.ExecuteReader();
                 while (dataReader.Read())
                 {
-                    string s = $"{dataReader["ProductName"]}";
-                    this.listBox1.Items.Add(s);
+                    string id = $"{dataReader["ProductID"]}";
+                    string name = $"{dataReader["ProductName"]}";
+                    string price = $"{dataReader["UnitPrice"]:c2}";
+                    string stock = $"{dataReader["UnitsInStock"]}";
+                    this.listBox1.Items.Add($"{id,-5}{name,-35}{price,-15}{stock,-5}");
                 }             
             }
             catch (Exception ex)  
@@ -114,7 +117,7 @@ namespace ADO.Homework
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {            
             SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=Northwind;Integrated Security=True");            
-            SqlDataAdapter adapter = new SqlDataAdapter($"SELECT ProductName FROM products p join Categories c on p.CategoryID = c.CategoryID  where CategoryName ='{comboBox2.Text}'", conn);
+            SqlDataAdapter adapter = new SqlDataAdapter($"SELECT ProductID,ProductName,UnitPrice,UnitsInStock FROM products p join Categories c on p.CategoryID = c.CategoryID  where CategoryName ='{comboBox2.Text}'", conn);
             DataSet ds = new DataSet();
             adapter.Fill(ds);           
             this.dataGridView1.DataSource = ds.Tables[0];           

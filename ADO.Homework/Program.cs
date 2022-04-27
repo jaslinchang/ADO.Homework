@@ -16,11 +16,12 @@ namespace ADO.Homework
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Frm7_Logon());
+            Application.Run(new Frm7_Logon());
 
-            Application.Run(new FrmMyAlbum_V1());
+ 
+
             //Application.Run(new Frm8_TreeView());
-            //Application.Run(new Frm7_Customers());
+
 
         }
     }

@@ -17,12 +17,19 @@ namespace ADO.Homework
         public Frm8_TreeView()
         {
             InitializeComponent();
-            LoadCountry();
+            LoadCountryToTreeView();
         }
 
-          
-        
-        private void LoadCountry()
+        int count = 0;       
+
+        private void LoadCount(string name)
+        {
+            this.customersTableAdapter1.FillByTreeCount(this.nwDataSet1.Customers,name);
+            dataGridView2.DataSource = nwDataSet1.Customers;
+            count = (dataGridView2.Rows.Count - 1);
+        }
+
+        private void LoadCountryToTreeView()
         {
             try
             {
@@ -31,23 +38,56 @@ namespace ADO.Homework
                     conn.Open();
                     SqlCommand command = new SqlCommand("select *  from customers", conn);
                     SqlDataReader dataReader = command.ExecuteReader();
+
+                    
+
                     while (dataReader.Read())
                     {
-
                         string Country = dataReader["Country"].ToString();
                         string City = dataReader["City"].ToString();
-                        TreeNode tree = new TreeNode();
-                        TreeNode tree2 = null;                                             
+                        
+                        //=============================
+                         TreeNode tree2 = null;  //拿來暫存
+                        count++;
+                        LoadCount(Country);
+                        //加入Country
 
+                        if (treeView1.Nodes[Country] == null)
+                        {
+                            TreeNode tree = new TreeNode();
+
+                            //LoadCount(Country);
+                            tree.Name = Country;
+                            tree.Text = Country +"("+ count+")";
+                            treeView1.Nodes.Add(tree);
+                            tree2 = tree;
+
+                            tree2.Tag = "Country";
+                        }
+                        else  tree2 = treeView1.Nodes[Country];                                               
+                    
+
+                         //==========================================
+
+
+                        
+                       /* SAFE
+                        TreeNode tree2 = null;  //拿來暫存
                         //加入Country
                         if (treeView1.Nodes[Country] == null)
                         {
+                            TreeNode tree = new TreeNode();
                             tree.Name = Country;
                             tree.Text = Country;
                             treeView1.Nodes.Add(tree);
                             tree2 = tree;
+                            tree2.Tag = "Country";
                         }
-                        else tree2 = tree;
+                        else tree2 = treeView1.Nodes[Country];
+
+                        */
+
+
 
                         //加入City
                         if (tree2.Nodes[City] == null)
@@ -57,25 +97,12 @@ namespace ADO.Homework
                             tree3.Text = City;
                             tree2.Nodes.Add(tree3);
                             tree2 = tree3;
+                            tree2.Tag = "City";
                         }
-                        else tree2 = tree2.Nodes[City];
-
-                        //tree.Name = $"{dataReader["country"]}";
-                        //tree.Text = $"{dataReader["country"]}";
-                        //treeView1.Nodes.Add(tree);
+                        else tree2 = tree2.Nodes[City] ;                    
 
 
                     }
-
-                    //for (int i = 0; i < treeView1.Nodes.Count; i++)
-                    //{
-                    //    for (int k = 0; k <=treeView1.Nodes.Count; k++)
-                    //    {
-                    //        treeView1.Nodes[i].Nodes.Add(k.ToString());
-                    //    }
-                    //}
-
-
                 }
             }
             catch (Exception ex)
@@ -84,17 +111,16 @@ namespace ADO.Homework
             }
 
         }
-        
 
-      
-      
-
-        private void button1_Click(object sender, EventArgs e)
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            for (int i = 0; i < treeView1.Nodes.Count; i++)
-            {
-                MessageBox.Show(treeView1.Nodes[i].Text);
-            }
+            if (e.Node.Tag.ToString() == "Country") return;
+
+            string city = e.Node.Text;
+            this.customersTableAdapter1.FillByTree(this.nwDataSet1.Customers, city);
+            dataGridView1.DataSource = nwDataSet1.Customers;            
+
+            label1.Text = "共 " + (dataGridView1.Rows.Count - 1) +" 筆,  ' "+city+ " '  Customers";
         }
 
         

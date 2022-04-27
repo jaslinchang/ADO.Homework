@@ -103,7 +103,7 @@ namespace ADO.Homework
             this.listBox1.Location = new System.Drawing.Point(152, 118);
             this.listBox1.Margin = new System.Windows.Forms.Padding(2);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(343, 228);
+            this.listBox1.Size = new System.Drawing.Size(557, 228);
             this.listBox1.TabIndex = 11;
             // 
             // comboBox1
