@@ -40,25 +40,18 @@ namespace ADO.Homework
             // 
             // toolStrip1
             // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2,
-            this.toolStripButton3,
-            this.toolStripButton4});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 439);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(661, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.Visible = false;
             // 
             // toolStripButton1
             // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(75, 22);
             this.toolStripButton1.Text = "實際大小";
             // 
             // toolStripButton2
@@ -87,9 +80,7 @@ namespace ADO.Homework
             // 
             // Frm6_MyAlbumShow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(661, 464);
             this.Controls.Add(this.toolStrip1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Frm6_MyAlbumShow";

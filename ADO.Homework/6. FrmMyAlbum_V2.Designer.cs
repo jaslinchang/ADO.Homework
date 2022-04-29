@@ -170,7 +170,7 @@ namespace ADO.Homework
             countryIdLabel.AutoSize = true;
             countryIdLabel.Location = new System.Drawing.Point(94, 78);
             countryIdLabel.Name = "countryIdLabel";
-            countryIdLabel.Size = new System.Drawing.Size(76, 17);
+            countryIdLabel.Size = new System.Drawing.Size(115, 25);
             countryIdLabel.TabIndex = 5;
             countryIdLabel.Text = "Country Id:";
             // 
@@ -179,7 +179,7 @@ namespace ADO.Homework
             countryNameLabel.AutoSize = true;
             countryNameLabel.Location = new System.Drawing.Point(94, 109);
             countryNameLabel.Name = "countryNameLabel";
-            countryNameLabel.Size = new System.Drawing.Size(100, 17);
+            countryNameLabel.Size = new System.Drawing.Size(153, 25);
             countryNameLabel.TabIndex = 7;
             countryNameLabel.Text = "Country Name:";
             // 
@@ -188,7 +188,7 @@ namespace ADO.Homework
             pictureIDLabel.AutoSize = true;
             pictureIDLabel.Location = new System.Drawing.Point(143, 44);
             pictureIDLabel.Name = "pictureIDLabel";
-            pictureIDLabel.Size = new System.Drawing.Size(70, 17);
+            pictureIDLabel.Size = new System.Drawing.Size(107, 25);
             pictureIDLabel.TabIndex = 12;
             pictureIDLabel.Text = "Picture ID:";
             // 
@@ -197,7 +197,7 @@ namespace ADO.Homework
             pictureNameLabel.AutoSize = true;
             pictureNameLabel.Location = new System.Drawing.Point(143, 75);
             pictureNameLabel.Name = "pictureNameLabel";
-            pictureNameLabel.Size = new System.Drawing.Size(92, 17);
+            pictureNameLabel.Size = new System.Drawing.Size(143, 25);
             pictureNameLabel.TabIndex = 14;
             pictureNameLabel.Text = "Picture Name:";
             // 
@@ -206,7 +206,7 @@ namespace ADO.Homework
             descriptionLabel.AutoSize = true;
             descriptionLabel.Location = new System.Drawing.Point(143, 106);
             descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new System.Drawing.Size(80, 17);
+            descriptionLabel.Size = new System.Drawing.Size(124, 25);
             descriptionLabel.TabIndex = 16;
             descriptionLabel.Text = "Description:";
             // 
@@ -215,7 +215,7 @@ namespace ADO.Homework
             pictureLabel.AutoSize = true;
             pictureLabel.Location = new System.Drawing.Point(365, 49);
             pictureLabel.Name = "pictureLabel";
-            pictureLabel.Size = new System.Drawing.Size(53, 17);
+            pictureLabel.Size = new System.Drawing.Size(81, 25);
             pictureLabel.TabIndex = 18;
             pictureLabel.Text = "Picture:";
             // 
@@ -224,7 +224,7 @@ namespace ADO.Homework
             countryIDLabel1.AutoSize = true;
             countryIDLabel1.Location = new System.Drawing.Point(143, 140);
             countryIDLabel1.Name = "countryIDLabel1";
-            countryIDLabel1.Size = new System.Drawing.Size(78, 17);
+            countryIDLabel1.Size = new System.Drawing.Size(117, 25);
             countryIDLabel1.TabIndex = 20;
             countryIDLabel1.Text = "Country ID:";
             // 
@@ -289,7 +289,7 @@ namespace ADO.Homework
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.splitContainer2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 26);
+            this.tabPage1.Location = new System.Drawing.Point(4, 34);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
@@ -397,7 +397,7 @@ namespace ADO.Homework
             this.label2.Location = new System.Drawing.Point(36, 23);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 17);
+            this.label2.Size = new System.Drawing.Size(52, 25);
             this.label2.TabIndex = 4;
             this.label2.Text = "城市";
             // 
@@ -413,7 +413,7 @@ namespace ADO.Homework
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.splitContainer4);
-            this.tabPage3.Location = new System.Drawing.Point(4, 26);
+            this.tabPage3.Location = new System.Drawing.Point(4, 34);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(1095, 533);
             this.tabPage3.TabIndex = 2;
@@ -504,7 +504,7 @@ namespace ADO.Homework
             this.fillCountryToolStripButton});
             this.fillCountryToolStrip.Location = new System.Drawing.Point(24, 150);
             this.fillCountryToolStrip.Name = "fillCountryToolStrip";
-            this.fillCountryToolStrip.Size = new System.Drawing.Size(250, 25);
+            this.fillCountryToolStrip.Size = new System.Drawing.Size(329, 32);
             this.fillCountryToolStrip.TabIndex = 1;
             this.fillCountryToolStrip.Text = "fillCountryToolStrip";
             this.fillCountryToolStrip.Visible = false;
@@ -512,20 +512,20 @@ namespace ADO.Homework
             // countryIDToolStripLabel
             // 
             this.countryIDToolStripLabel.Name = "countryIDToolStripLabel";
-            this.countryIDToolStripLabel.Size = new System.Drawing.Size(66, 22);
+            this.countryIDToolStripLabel.Size = new System.Drawing.Size(101, 27);
             this.countryIDToolStripLabel.Text = "CountryID:";
             // 
             // countryIDToolStripTextBox
             // 
             this.countryIDToolStripTextBox.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F);
             this.countryIDToolStripTextBox.Name = "countryIDToolStripTextBox";
-            this.countryIDToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            this.countryIDToolStripTextBox.Size = new System.Drawing.Size(100, 32);
             // 
             // fillCountryToolStripButton
             // 
             this.fillCountryToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.fillCountryToolStripButton.Name = "fillCountryToolStripButton";
-            this.fillCountryToolStripButton.Size = new System.Drawing.Size(70, 22);
+            this.fillCountryToolStripButton.Size = new System.Drawing.Size(106, 27);
             this.fillCountryToolStripButton.Text = "FillCountry";
             this.fillCountryToolStripButton.Click += new System.EventHandler(this.fillCountryToolStripButton_Click);
             // 
@@ -671,7 +671,7 @@ namespace ADO.Homework
             this.countryIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.countryBindingSource, "CountryId", true));
             this.countryIdTextBox.Location = new System.Drawing.Point(200, 75);
             this.countryIdTextBox.Name = "countryIdTextBox";
-            this.countryIdTextBox.Size = new System.Drawing.Size(100, 25);
+            this.countryIdTextBox.Size = new System.Drawing.Size(100, 33);
             this.countryIdTextBox.TabIndex = 6;
             // 
             // countryNameTextBox
@@ -679,7 +679,7 @@ namespace ADO.Homework
             this.countryNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.countryBindingSource, "CountryName", true));
             this.countryNameTextBox.Location = new System.Drawing.Point(200, 106);
             this.countryNameTextBox.Name = "countryNameTextBox";
-            this.countryNameTextBox.Size = new System.Drawing.Size(100, 25);
+            this.countryNameTextBox.Size = new System.Drawing.Size(100, 33);
             this.countryNameTextBox.TabIndex = 8;
             // 
             // countryDataGridView
@@ -704,6 +704,7 @@ namespace ADO.Homework
             this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 150;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -720,7 +721,7 @@ namespace ADO.Homework
             this.label5.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label5.Location = new System.Drawing.Point(8, 43);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 21);
+            this.label5.Size = new System.Drawing.Size(106, 31);
             this.label5.TabIndex = 5;
             this.label5.Text = "Country";
             // 
@@ -844,7 +845,7 @@ namespace ADO.Homework
             this.pictureIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.picture1BindingSource, "PictureID", true));
             this.pictureIDTextBox.Location = new System.Drawing.Point(241, 41);
             this.pictureIDTextBox.Name = "pictureIDTextBox";
-            this.pictureIDTextBox.Size = new System.Drawing.Size(100, 25);
+            this.pictureIDTextBox.Size = new System.Drawing.Size(100, 33);
             this.pictureIDTextBox.TabIndex = 13;
             // 
             // picture1BindingSource
@@ -857,7 +858,7 @@ namespace ADO.Homework
             this.pictureNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.picture1BindingSource, "PictureName", true));
             this.pictureNameTextBox.Location = new System.Drawing.Point(241, 72);
             this.pictureNameTextBox.Name = "pictureNameTextBox";
-            this.pictureNameTextBox.Size = new System.Drawing.Size(100, 25);
+            this.pictureNameTextBox.Size = new System.Drawing.Size(100, 33);
             this.pictureNameTextBox.TabIndex = 15;
             // 
             // descriptionTextBox
@@ -865,7 +866,7 @@ namespace ADO.Homework
             this.descriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.picture1BindingSource, "Description", true));
             this.descriptionTextBox.Location = new System.Drawing.Point(241, 103);
             this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.Size = new System.Drawing.Size(100, 25);
+            this.descriptionTextBox.Size = new System.Drawing.Size(100, 33);
             this.descriptionTextBox.TabIndex = 17;
             // 
             // picturePictureBox
@@ -884,7 +885,7 @@ namespace ADO.Homework
             this.countryIDTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.picture1BindingSource, "CountryID", true));
             this.countryIDTextBox1.Location = new System.Drawing.Point(241, 137);
             this.countryIDTextBox1.Name = "countryIDTextBox1";
-            this.countryIDTextBox1.Size = new System.Drawing.Size(100, 25);
+            this.countryIDTextBox1.Size = new System.Drawing.Size(100, 33);
             this.countryIDTextBox1.TabIndex = 21;
             // 
             // picture1DataGridView
@@ -912,6 +913,7 @@ namespace ADO.Homework
             this.dataGridViewTextBoxColumn3.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 150;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -962,7 +964,7 @@ namespace ADO.Homework
             this.label6.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label6.Location = new System.Drawing.Point(14, 43);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 21);
+            this.label6.Size = new System.Drawing.Size(83, 31);
             this.label6.TabIndex = 11;
             this.label6.Text = "Photo";
             // 
@@ -1012,7 +1014,7 @@ namespace ADO.Homework
             // 
             // Frm6MyAlbum_V2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1107, 682);
             this.Controls.Add(this.splitContainer1);

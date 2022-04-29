@@ -11,12 +11,13 @@ using System.Windows.Forms;
 namespace ADO.Homework
 {
     public partial class Frm6_MyAlbumShow : Form
-    {        
+    {
 
         public Frm6_MyAlbumShow()
         {
-            InitializeComponent();      
+            InitializeComponent();
         }
+
      
     }
 }
